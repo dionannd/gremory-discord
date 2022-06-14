@@ -1,26 +1,27 @@
 {
-  "name": "jointocreate",
+  "name": "discord-bot",
   "version": "1.0.0",
-  "description": "BOT DISCORD - Join to Create Channel Rooms",
+  "description": "BOT DISCORD YGY",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tomato6966/Discord-Join-to-Create.git"
+    "url": "git+https://github.com/dionannd/discord-bot.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tomato6966/Discord-Join-to-Create/issues"
+    "url": "https://github.com/dionannd/discord-bot/issues"
   },
-  "homepage": "https://github.com/Tomato6966/Discord-Join-to-Create#readme",
+  "homepage": "https://github.com/dionannd/discord-bot#readme",
   "dependencies": {
     "ascii-table": "^0.0.9",
     "discord.js": "^13.8.0",
     "glob": "^8.0.3",
-    "mongoose": "^6.3.8",
-    "node.js": "^0.0.1-security"
+    "mongoose": "^6.3.8"
   }
 }

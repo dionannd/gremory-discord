@@ -8,5 +8,6 @@ client.commands = new Collection();
 client.voiceGenerator = new Collection();
 
 require("./Handlers/Events")(client);
+// require("./Handlers/Commands")(client);
 
 client.login(TOKEN);
