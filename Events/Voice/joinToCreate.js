@@ -1,5 +1,5 @@
 const { VoiceState } = require("discord.js");
-const config = require("../../config.json");
+const config = require("../../Structures/config.json");
 
 module.exports = {
   name: "voiceStateUpdate",

@@ -2,57 +2,57 @@ const { CommandInteraction, MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "voice",
-  description: "Control your own channel",
+  description: "Kontrol channel yang kamu miliki",
   options: [
     {
       name: "invite",
       type: "SUB_COMMAND",
-      description: "Invit a friend to your channel",
+      description: "Undang teman kamu ke channel kamu",
       options: [
         {
           name: "member",
           type: "USER",
           require: true,
-          description: "Select the member",
+          description: "Pilih anggota untuk diundang",
         },
       ],
     },
     {
       name: "disallow",
       type: "SUB_COMMAND",
-      description: "Remove someone's access to the channel",
+      description: "Tendang seseorang dari channel",
       options: [
         {
           name: "member",
           type: "USER",
           require: true,
-          description: "Select the member",
+          description: "Pilih anggota untuk ditendang",
         },
       ],
     },
     {
       name: "name",
       type: "SUB_COMMAND",
-      description: "Change the name of your channel",
+      description: "Ubah nama channel kamu",
       options: [
         {
           name: "text",
           type: "STRING",
           require: true,
-          description: "Provide the name",
+          description: "Tuliskan nama channel",
         },
       ],
     },
     {
       name: "public",
       type: "SUB_COMMAND",
-      description: "Make your channel public to everyone",
+      description: "Ubah channel ke pulic untuk semua orang",
       options: [
         {
           name: "turn",
           type: "STRING",
           require: true,
-          description: "Turn on or off",
+          description: "Pilih On atau Off",
           choices: [
             { name: "On", value: "On" },
             { name: "Off", value: "Off" },
@@ -78,7 +78,7 @@ module.exports = {
     if (!voiceChannel)
       return interaction.reply({
         embeds: [
-          Embed.setDescription("You're not in a voice channel.").setColor(
+          Embed.setDescription("Kamu tidak sedang di voice channel.").setColor(
             "RED"
           ),
         ],
@@ -88,9 +88,9 @@ module.exports = {
     if (!ownedChannel || voiceChannel.id !== ownedChannel)
       return interaction.reply({
         embeds: [
-          Embed.setDescription("You do not own this or any channel.").setColor(
-            "RED"
-          ),
+          Embed.setDescription(
+            "Kamu tidak memiliki channel ini atau channel mana pun."
+          ).setColor("RED"),
         ],
         ephemeral: true,
       });
@@ -103,7 +103,7 @@ module.exports = {
             return interaction.reply({
               embeds: [
                 Embed.setDescription(
-                  "Name cannot exceed the 22 character limit."
+                  "Nama tidak boleh lebih dari 22 karakter."
                 ).setColor("RED"),
               ],
               ephemeral: true,
@@ -112,7 +112,7 @@ module.exports = {
           voiceChannel.edit({ name: newName });
           interaction.reply({
             embeds: [
-              Embed.setDescription(`Channel name has been set to ${newName}`),
+              Embed.setDescription(`Nama Channel berubah menjadi ${newName}`),
             ],
             ephemeral: true,
           });
@@ -128,12 +128,14 @@ module.exports = {
           targetMember.send({
             embeds: [
               Embed.setDescription(
-                `${member} has invited you to <#${voiceChannel.id}>`
+                `${member} mengundang kamu ke channel <#${voiceChannel.id}>`
               ),
             ],
           });
           interaction.reply({
-            embeds: [Embed.setDescription(`${targetMember} has been invited.`)],
+            embeds: [
+              Embed.setDescription(`${targetMember} sudah diundang ke channel`),
+            ],
           });
         }
         break;
@@ -152,7 +154,7 @@ module.exports = {
           interaction.reply({
             embeds: [
               Embed.setDescription(
-                `${targetMember} has been removed from this channel.`
+                `${targetMember} sudah di tendang dari channel`
               ),
             ],
             ephemeral: true,
@@ -162,24 +164,28 @@ module.exports = {
       case "public": {
         const turnChoice = options.getString("turn");
         switch (turnChoice) {
-          case "on":
+          case "On":
             {
               voiceChannel.permissionOverwrites.edit(guild.id, {
                 CONNECT: null,
               });
               interaction.reply({
-                embeds: [Embed.setDescription("The channel is now public")],
+                embeds: [
+                  Embed.setDescription("Channel berubah menjadi Public"),
+                ],
                 ephemeral: true,
               });
             }
             break;
-          case "off":
+          case "Off":
             {
               voiceChannel.permissionOverwrites.edit(guild.id, {
                 CONNECT: false,
               });
               interaction.reply({
-                embeds: [Embed.setDescription("The channel is now closed")],
+                embeds: [
+                  Embed.setDescription("Channel berubah menjadi Private"),
+                ],
                 ephemeral: true,
               });
             }
