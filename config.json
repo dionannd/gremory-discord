@@ -2,5 +2,5 @@
   "TOKEN": "OTg1OTA3ODc0ODU5NDU0NTY0.GLSRiw.ndYWgZoEYLRXVeo3iAyO-zPH_nZOJVAMSFtPlM",
   "DATABASE": "mongodb+srv://dion_dev:admin123@discord-bot.gvxn0lo.mongodb.net/?retryWrites=true&w=majority",
   "VOICECHANNEL_ID": "985951100807049226",
-  "TEXTCHANNEL_ID": "986236405061677086"
+  "SERVER_ID": "941519741456093194"
 }
