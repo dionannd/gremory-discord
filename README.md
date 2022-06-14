@@ -12,7 +12,7 @@ A Basic Bot for Discord `under developed`
 
  **2.** Download this repo and unzip it   |   or git clone it
  
- **3.** Install all of the packages with **`npm install`**     |  the packages are   **`npm install node.js discord.js`**
+ **3.** Install all of the packages with **`npm install`**     |  the packages are   **`npm install node.js discord.js glob ascii-table mongoose`**
  
  **4.** start the bot with **`node index.js` or `npm start`**
 
@@ -22,7 +22,7 @@ A Basic Bot for Discord `under developed`
 // config.json
 {
   "TOKEN": "Your bot token",
-  "DATABASE": "Your DB url connect",
+  "DATABASE": "Your DB url connect", // rec: mongoDB
   "VOICECHANNEL_ID": "your discord voice channel ID",
   "SERVER_ID": "your server ID"
 }
