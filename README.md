@@ -2,11 +2,11 @@
 
 A Basic Bot for Discord `under developed`
 
-### Feature
+## Feature
 
 - Join to Create Voice Channel Room's
 
-### Installation
+## Installation
 
  **1.** Install [node.js v14](https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode) or higher
 
@@ -16,7 +16,7 @@ A Basic Bot for Discord `under developed`
  
  **4.** start the bot with **`node index.js` or `npm start`**
 
-### Setup config.json in root project
+## Setup config.json in root project
 
 ```javascript
 // config.json
@@ -28,6 +28,6 @@ A Basic Bot for Discord `under developed`
 }
 ```
 
-### **NOTE:**
+## **NOTE:**
 
 *If you are having errors/problems with starting, delete the `package.json` & `package-lock.json` file and do, before you install the packages `npm init -y`*
