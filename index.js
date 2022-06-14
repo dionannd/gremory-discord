@@ -1,11 +1,12 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
-const config = require("./config.json");
+const { Client, Collection, Intents } = require("discord.js");
+const client = new Client({
+  intents: 32767,
+});
+const { TOKEN } = require("./config.json");
 
-client.on("ready", ()=>console.log("READY"));
+client.commands = new Collection();
+client.voiceGenerator = new Collection();
 
-const jointocreate = require("./jointocreate");
-jointocreate(client);
+require("./Handlers/Events")(client);
 
-
-client.login(config.TOKEN);
+client.login(TOKEN);
