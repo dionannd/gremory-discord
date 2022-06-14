@@ -1,57 +1,33 @@
-## Discord-Join-to-Create
+## Discord Bot
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Tomato6966/)
-[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Tomato6966/Ask-Me-Anything)
-[![Support Server](https://img.shields.io/discord/591914197219016707.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/fS6qBSm)
+A Basic Bot for Discord `under developed`
 
-A basic Join to Create Bot, Which works perfectly finem, Easy to setup!
+### Feature
 
-## [**DISCORD SUPPORT SERVER INVITE**](https://support.milrato.eu)
+- Join to Create Voice Channel Room's
 
-## Installation | How to use the Bot
+### Installation
 
- **1.** Install [node.js v12](https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode) or higher
+ **1.** Install [node.js v14](https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode) or higher
 
  **2.** Download this repo and unzip it   |   or git clone it
  
  **3.** Install all of the packages with **`npm install`**     |  the packages are   **`npm install node.js discord.js`**
  
- **4.** start the bot with **`node index.js`**
+ **4.** start the bot with **`node index.js` or `npm start`**
 
-## Usage - index.js
+### Setup config.json in root project
 
 ```javascript
-const Discord = require("discord.js");          //load the Discord.js Library
-const client = new Discord.Client();            //make a new Client
-const config = require("./config.json");        //load in all of the config files
-client.on("ready", ()=>console.log("READY"));   //log when the bot gets ready
-const jointocreate = require("./jointocreate"); //load the jointocreate.js file
-jointocreate(client);                           //call the jointocreate file
-client.login(config.TOKEN);                     //start the bot with the bot token
+// config.json
+{
+  "TOKEN": "Your bot token",
+  "DATABASE": "Your DB url connect",
+  "VOICECHANNEL_ID": "your discord voice channel ID",
+  "SERVER_ID": "your server ID"
+}
 ```
 
-## **NOTE:**
+### **NOTE:**
 
-*If you are having errors/problems with starting delete the package.json file and do, before you install the packages `npm init`*
-
-<br/>
-  
-***
-
-## [Discord Server 😎](https://discord.gg/milrato) | [Website](https://milrato.dev)
-<a href="https://discord.gg/milrato"><img src="https://discord.com/api/guilds/773668217163218944/widget.png?style=banner2"></a>
-
-***
-
-## SUPPORT ME AND MILRATO DEVELOPMENT
-
-> You can always Support me by inviting one of my **own Discord Bots**
-
-[![2021's best Music Bot | Lava Music](https://cdn.discordapp.com/attachments/748533465972080670/817088638780440579/test3.png)](https://lava.milrato.dev)
-[![Musicium Music Bot](https://cdn.discordapp.com/attachments/742446682381221938/770055673965707264/test1.png)](https://musicium.musicium.dev)
-[![Milrato Multi Bot](https://cdn.discordapp.com/attachments/742446682381221938/770056826724679680/test1.png)](https://milrato.milrato.dev)
-
-# Credits
-
-> If consider using this Bot, make sure to credit me!
+*If you are having errors/problems with starting, delete the `package.json` & `package-lock.json` file and do, before you install the packages `npm init -y`*
