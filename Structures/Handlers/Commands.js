@@ -11,7 +11,7 @@ const config = require("../config.json");
  * @param {Client} client
  */
 module.exports = async (client) => {
-  const Table = new Ascii("Memuat Command");
+  const Table = new Ascii("Commands Loaded");
 
   CommandsArray = [];
 
@@ -19,21 +19,25 @@ module.exports = async (client) => {
     const command = require(file);
 
     if (!command.name)
-      return Table.addRow(file.split("/")[7], "❎ GAGAL", "Kekurangan nama.");
+      return Table.addRow(file.split("/")[7], "❎ FAILED", "Missing a name.");
 
     if (!command.description)
-      return Table.addRow(command.name, "❎ GAGAL", "Kekurangan deskripsi.");
+      return Table.addRow(command.name, "❎ FAILED", "Missing a description.");
 
     if (command.permission) {
       if (Perms.includes(command.permission)) command.defaultPermission = false;
       else
-        return Table.addRow(command.name, "❎ GAGAL", "Perizinan tidak valid.");
+        return Table.addRow(
+          command.name,
+          "❎ FAILED",
+          "Permission is an invalid."
+        );
     }
 
     client.commands.set(command.name, command);
     CommandsArray.push(command);
 
-    await Table.addRow(command.name, "✅ BERHASIL");
+    await Table.addRow(command.name, "✅ SUCCESSFUL");
   });
 
   console.log(Table.toString());
@@ -41,7 +45,7 @@ module.exports = async (client) => {
   // // PERMISSION CHECK
 
   // client.on("ready", async () => {
-  //   const MainGuild = await client.guilds.cache.get(config.SERVER_ID);
+  //   const MainGuild = await client.guilds.cache.get(config.serverId);
 
   //   MainGuild.commands.set(CommandsArray).then(async (command) => {
   //     const Roles = (commandName) => {

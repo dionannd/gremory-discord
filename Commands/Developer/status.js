@@ -4,7 +4,7 @@ require("../../Events/Client/ready");
 
 module.exports = {
   name: "status",
-  description: "Menampilkan status koneksi client dan database.",
+  description: "Display the status of the client and database connection.",
 
   /**
    *
@@ -15,7 +15,7 @@ module.exports = {
     const Response = new MessageEmbed().setColor("AQUA").setDescription(
       `**Client**: \`🟢 ONLINE\` - \`${
         client.ws.ping
-      }ms\`\n **Aktif**: <t:${parseInt(client.readyTimestamp / 1000)}:R>\n
+      }ms\`\n **Uptime**: <t:${parseInt(client.readyTimestamp / 1000)}:R>\n
       **Database**: \`${switchTo(connection.readyState)}\``
     );
 
@@ -27,16 +27,16 @@ function switchTo(val) {
   var status = " ";
   switch (val) {
     case 0:
-      status = `🔴 TERPUTUS`;
+      status = `🔴 DISCONNECTED`;
       break;
     case 1:
-      status = `🟢 TERHUBUNG`;
+      status = `🟢 CONNECTED`;
       break;
     case 2:
-      status = `🟠 MENGHUBUNGKAN`;
+      status = `🟠 CONNECTING`;
       break;
     case 3:
-      status = `🔵 MEMUTUSKAN KONEKSI`;
+      status = `🔵 DISCONNECTING`;
       break;
   }
 
