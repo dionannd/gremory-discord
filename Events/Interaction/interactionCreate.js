@@ -16,9 +16,7 @@ module.exports = {
           interaction.reply({
             embeds: [
               new MessageEmbed()
-                .setDescription(
-                  "⛔ An error occured while running this command."
-                )
+                .setDescription("⛔ Bermasalah saat menjalankan command ini.")
                 .setColor("RED"),
             ],
           }) && client.commands.delete(interaction.commandName)
