@@ -21,10 +21,10 @@ A Basic Bot for Discord `under developed`
 ```javascript
 // config.json
 {
-  "TOKEN": "Your bot token",
-  "DATABASE": "Your DB url connect", // rec: mongoDB
-  "VOICECHANNEL_ID": "your discord voice channel ID",
-  "SERVER_ID": "your server ID"
+  "Token": "Your bot token",
+  "DatabaseUrl": "Your DB url connect", // rec: mongoDB
+  "voiceChannelId": "your discord voice channel ID",
+  "serverId": "your server ID"
 }
 ```
 
