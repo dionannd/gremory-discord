@@ -1,5 +1,5 @@
 const { Client } = require("discord.js");
-const { DATABASE } = require("../../Structures/config.json");
+const config = require("../../Structures/config.json");
 const mongoose = require("mongoose");
 
 module.exports = {
@@ -11,17 +11,19 @@ module.exports = {
    * @param {Client} client
    */
   execute(client) {
-    console.log("Client sudah siap!");
-    client.user.setActivity("serah lo dah ah!", { type: "WATCHING" });
+    console.log("The client is now ready!");
 
-    if (!DATABASE) return;
+    // Bot status Activity
+    client.user.setActivity("serah lo dah ah!!", { type: "WATCHING" });
+
+    if (!config.DatabaseUrl) return;
     mongoose
-      .connect(DATABASE, {
+      .connect(config.DatabaseUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       })
       .then(() => {
-        console.log("Client sudah terhubung ke database!");
+        console.log("The client is now connected to database!");
       })
       .catch((err) => {
         console.log(err);
