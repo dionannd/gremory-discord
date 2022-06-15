@@ -11,7 +11,7 @@ const config = require("../config.json");
  * @param {Client} client
  */
 module.exports = async (client) => {
-  const Table = new Ascii("Commands Loaded");
+  const Table = new Ascii("Memuat Command");
 
   CommandsArray = [];
 
@@ -19,30 +19,34 @@ module.exports = async (client) => {
     const command = require(file);
 
     if (!command.name)
-      return Table.addRow(file.split("/")[7], "❎ FAILED", "Missing a name.");
+      return Table.addRow(
+        file.split("/")[7],
+        "❎ GAGAL",
+        "Nama tidak ditemukan"
+      );
 
     if (!command.description)
-      return Table.addRow(command.name, "❎ FAILED", "Missing a description.");
+      return Table.addRow(
+        command.name,
+        "❎ GAGAL",
+        "Deskripsi tidak ditemukan"
+      );
 
     if (command.permission) {
       if (Perms.includes(command.permission)) command.defaultPermission = false;
       else
-        return Table.addRow(
-          command.name,
-          "❎ FAILED",
-          "Permission is an invalid."
-        );
+        return Table.addRow(command.name, "❎ GAGAL", "Perizinan tidak valid");
     }
 
     client.commands.set(command.name, command);
     CommandsArray.push(command);
 
-    await Table.addRow(command.name, "✅ SUCCESSFUL");
+    await Table.addRow(command.name, "✅ BERHASIL");
   });
 
   console.log(Table.toString());
 
-  // // PERMISSION CHECK
+  // PERMISSION CHECK
 
   // client.on("ready", async () => {
   //   const MainGuild = await client.guilds.cache.get(config.serverId);
@@ -51,7 +55,7 @@ module.exports = async (client) => {
   //     const Roles = (commandName) => {
   //       const cmdPerms = CommandsArray.find(
   //         (c) => c.name === commandName
-  //       ).permission;
+  //       ).permissions;
   //       if (!cmdPerms) return null;
 
   //       return MainGuild.roles.cache.filter((r) => r.permissions.has(cmdPerms));
