@@ -60,6 +60,19 @@ module.exports = {
         },
       ],
     },
+    {
+      name: "limit",
+      type: "SUB_COMMAND",
+      description: "Ubah maksimal isi channel.",
+      options: [
+        {
+          name: "number",
+          type: "INTEGER",
+          require: true,
+          description: "Isi angka 0-99.",
+        },
+      ],
+    },
   ],
 
   /**
@@ -158,6 +171,40 @@ module.exports = {
             embeds: [
               Embed.setDescription(
                 `${targetMember} sudah di kick dari channel.`
+              ),
+            ],
+            ephemeral: true,
+          });
+        }
+        break;
+      case "limit":
+        {
+          const newLimit = options.getInteger("number");
+          if (newLimit > 99)
+            return interaction.reply({
+              embeds: [
+                Embed.setDescription(
+                  "Limit tidak boleh lebih dari 99."
+                ).setColor("RED"),
+              ],
+              ephemeral: true,
+            });
+
+          if (newLimit === 0)
+            return interaction.reply({
+              embeds: [
+                Embed.setDescription(
+                  `limit channel berubah menjadi tidak terbatas.`
+                ),
+              ],
+              ephemeral: true,
+            });
+
+          voiceChannel.edit({ user_limit: newLimit });
+          interaction.reply({
+            embeds: [
+              Embed.setDescription(
+                `limit channel berubah menjadi: ${newLimit} orang.`
               ),
             ],
             ephemeral: true,
