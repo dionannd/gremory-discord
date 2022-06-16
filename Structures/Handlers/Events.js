@@ -12,7 +12,8 @@ module.exports = async (client) => {
 
     if (!Events.includes(event.name) || !event.name) {
       const L = file.split("/");
-      await Table.addRow(
+
+      Table.addRow(
         `${event.name || "❎ TIDAK DITEMUKAN"}`,
         `Nama event tidak valid atau tidak ditemukan: ${L[6] + `/` + L[7]}`
       );
@@ -25,7 +26,7 @@ module.exports = async (client) => {
       client.on(event.name, (...args) => event.execute(...args, client));
     }
 
-    await Table.addRow(event.name, "✅ BERHASIL");
+    Table.addRow(event.name, "✅ BERHASIL");
   });
 
   console.log(Table.toString());

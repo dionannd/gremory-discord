@@ -4,7 +4,7 @@ const { promisify } = require("util");
 const { glob } = require("glob");
 const PG = promisify(glob);
 const Ascii = require("ascii-table");
-const config = require("../config.json");
+// const { serverId } = require("../config.json");
 
 /**
  *
@@ -49,7 +49,7 @@ module.exports = async (client) => {
   // PERMISSION CHECK
 
   // client.on("ready", async () => {
-  //   const MainGuild = await client.guilds.cache.get(config.serverId);
+  //   const MainGuild = await client.guilds.cache.get(serverId);
 
   //   MainGuild.commands.set(CommandsArray).then(async (command) => {
   //     const Roles = (commandName) => {

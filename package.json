@@ -2,27 +2,33 @@
   "name": "discord-bot",
   "version": "1.0.0",
   "description": "A Basic Bot for Discord `under developed`",
-  "main": "index.js",
+  "main": "./Structures/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dionannd/discord-bot.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "dionannd",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/dionannd/discord-bot/issues"
   },
   "homepage": "https://github.com/dionannd/discord-bot#readme",
   "dependencies": {
+    "@distube/spotify": "^1.2.1",
     "ascii-table": "^0.0.9",
     "discord.js": "^13.8.0",
+    "distube": "^3.3.4",
+    "ffmpeg-static": "^4.4.1",
     "glob": "^8.0.3",
+    "libsodium-wrappers": "^0.7.10",
     "mongoose": "^6.3.8",
-    "node.js": "^0.0.1-security"
+    "node.js": "^0.0.1-security",
+    "yt-search": "^2.10.3",
+    "ytdl-core": "^4.11.0"
   }
 }
