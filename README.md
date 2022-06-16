@@ -17,10 +17,10 @@ A Basic Bot for Discord `under developed`
  
  **4.** start the bot with **`node index.js` or `npm start`**
 
-## Setup config.json in root project
+## Setup configuration
 
 ```javascript
-// config.json
+// Structure/config.json
 {
   "Token": "Your bot token",
   "DatabaseUrl": "Your DB url connect", // rec: mongoDB
