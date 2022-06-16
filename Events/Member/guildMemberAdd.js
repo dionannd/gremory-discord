@@ -1,5 +1,4 @@
 const { MessageEmbed, WebhookClient, GuildMember } = require("discord.js");
-const { rolesId } = require("../../Structures/config.json");
 
 module.exports = {
   name: "guildMemberAdd",
@@ -11,7 +10,7 @@ module.exports = {
   execute(member) {
     const { user, guild } = member;
 
-    member.roles.add(rolesId); // Add custom role for new member
+    member.roles.add(process.env.ROLES_ID); // Add custom role for new member
 
     // from Webhook url
     const Welcomer = new WebhookClient({

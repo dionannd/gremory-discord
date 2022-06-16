@@ -1,5 +1,4 @@
 const { Client, Collection } = require("discord.js");
-const { Token } = require("./config.json");
 const { DisTube } = require("distube");
 const { SpotifyPlugin } = require("@distube/spotify");
 
@@ -19,7 +18,7 @@ client.voiceGenerator = new Collection();
 
 module.exports = client;
 
-require("./Handlers/Events")(client);
-require("./Handlers/Commands")(client);
+require("./Structures/Handlers/Events")(client);
+require("./Structures/Handlers/Commands")(client);
 
-client.login(Token);
+client.login(process.env.TOKEN);

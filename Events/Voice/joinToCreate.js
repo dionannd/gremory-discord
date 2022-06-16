@@ -1,5 +1,4 @@
 const { VoiceState } = require("discord.js");
-const { voiceChannelId } = require("../../Structures/config.json");
 
 module.exports = {
   name: "voiceStateUpdate",
@@ -12,7 +11,7 @@ module.exports = {
     const { member, guild } = newState;
     const oldChannel = oldState.channel;
     const newChannel = newState.channel;
-    const joinToCreate = voiceChannelId;
+    const joinToCreate = process.env.VOICECHANNEL_ID;
 
     if (
       oldChannel !== newChannel &&

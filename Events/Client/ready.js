@@ -1,5 +1,4 @@
 const { Client } = require("discord.js");
-const { DatabaseUrl } = require("../../Structures/config.json");
 const mongoose = require("mongoose");
 
 module.exports = {
@@ -13,9 +12,9 @@ module.exports = {
   execute(client) {
     console.log("Klien sudah siap dijalankan!");
 
-    if (!DatabaseUrl) return;
+    if (!process.env.DATABASE_URL) return;
     mongoose
-      .connect(DatabaseUrl, {
+      .connect(process.env.DATABASE_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       })
