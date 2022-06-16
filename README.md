@@ -5,6 +5,7 @@ A Basic Bot for Discord `under developed`
 ## Feature
 
 - Join to Create Voice Channel Room's
+- Slash command bot
 
 ## Installation
 
