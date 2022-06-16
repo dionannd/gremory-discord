@@ -11,8 +11,9 @@ module.exports = {
   execute(member) {
     const { user, guild } = member;
 
-    member.roles.add(rolesId);
+    member.roles.add(rolesId); // Add custom role for new member
 
+    // from Webhook url
     const Welcomer = new WebhookClient({
       id: "986735451404664852",
       token:
@@ -28,9 +29,9 @@ module.exports = {
       .setThumbnail(user.avatarURL({ dynamic: true, size: 512 }))
       .setDescription(
         `
-      Welcome ${member} to the **${guild.name}**!\n
-      Account Created: <t:${parseInt(user.createdTimestamp / 1000)}:R>\n
-      Latest Member Count: **${guild.memberCount}**
+      Selamat daang ${member} di **${guild.name}**!
+      \n Akun Dibuat Pada: <t:${parseInt(user.createdTimestamp / 1000)}:R>
+      \n Jumlah Anggota Terbaru: **${guild.memberCount}**
     `
       )
       .setFooter({ text: `ID: ${user.id}` });
