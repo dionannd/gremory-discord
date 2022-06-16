@@ -4,7 +4,7 @@ module.exports = {
   name: "music",
   description: "Musik sistem komplit",
   permission: "ADMINISTRATOR",
-  option: [
+  options: [
     {
       name: "play",
       description: "Putar musik.",

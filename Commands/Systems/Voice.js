@@ -67,9 +67,9 @@ module.exports = {
       options: [
         {
           name: "number",
-          type: "INTEGER",
+          type: "NUMBER",
           require: true,
-          description: "Isi angka 0-99.",
+          description: "Isi angka 0-99, 0 = tidak terbatas.",
         },
       ],
     },
@@ -180,6 +180,7 @@ module.exports = {
       case "limit":
         {
           const newLimit = options.getInteger("number");
+
           if (newLimit > 99)
             return interaction.reply({
               embeds: [
@@ -190,8 +191,9 @@ module.exports = {
               ephemeral: true,
             });
 
-          if (newLimit === 0)
-            return interaction.reply({
+          if (newLimit < 1) {
+            voiceChannel.setUserLimit(0);
+            interaction.reply({
               embeds: [
                 Embed.setDescription(
                   `limit channel berubah menjadi tidak terbatas.`
@@ -199,16 +201,17 @@ module.exports = {
               ],
               ephemeral: true,
             });
-
-          voiceChannel.edit({ user_limit: newLimit });
-          interaction.reply({
-            embeds: [
-              Embed.setDescription(
-                `limit channel berubah menjadi: ${newLimit} orang.`
-              ),
-            ],
-            ephemeral: true,
-          });
+          } else {
+            voiceChannel.setUserLimit(newLimit);
+            interaction.reply({
+              embeds: [
+                Embed.setDescription(
+                  `limit channel berubah menjadi: ${newLimit} orang.`
+                ),
+              ],
+              ephemeral: true,
+            });
+          }
         }
         break;
       case "public":
