@@ -25,10 +25,9 @@ module.exports = {
       .setThumbnail(user.avatarURL({ dynamic: true, size: 512 }))
       .setDescription(
         `
-      ${member} has left from the server\n
-      Joined: <t:${parseInt(
-        member.joinedTimestamp / 1000
-      )}:R>\nLatest Member Count: **${guild.memberCount}**`
+      ${member} telah keluar dari server
+      \n Bergabung Pada: <t:${parseInt(member.joinedTimestamp / 1000)}:R>
+      \n Jumlah Anggota Terakhir: **${guild.memberCount}**`
       )
       .setFooter({ text: `ID: ${user.id}` });
 
