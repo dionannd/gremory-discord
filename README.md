@@ -1,11 +1,14 @@
 ## Discord Bot
 
-A Basic Bot for Discord `under developed`
+A Basic Bot for Discord `under development`
 
 ## Feature
 
-- Join to Create Voice Channel Room's
-- Slash command bot
+- `/` command bot
+- `status` client and database connection
+- `Join to Create` Voice Channel Room's
+- Control Channel from `join to create` with commands
+- Music `under development`
 
 ## Installation
 
