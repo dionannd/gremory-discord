@@ -69,7 +69,7 @@ module.exports = {
           name: "number",
           type: "NUMBER",
           require: true,
-          description: "Isi angka 0-99, 0 = tidak terbatas.",
+          description: "Isi angka 0-99 | 0 = tidak terbatas.",
         },
       ],
     },

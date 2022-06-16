@@ -1,10 +1,11 @@
 const { Client, Collection } = require("discord.js");
+const client = new Client({ intents: 32767 });
+
 const { DisTube } = require("distube");
 const { SpotifyPlugin } = require("@distube/spotify");
 
-const client = new Client({
-  intents: 32767,
-});
+client.commands = new Collection();
+client.voiceGenerator = new Collection();
 
 client.distube = new DisTube(client, {
   emitNewSongOnly: true,
@@ -12,9 +13,6 @@ client.distube = new DisTube(client, {
   emitAddSongWhenCreatingQueue: false,
   plugins: [new SpotifyPlugin()],
 });
-
-client.commands = new Collection();
-client.voiceGenerator = new Collection();
 
 module.exports = client;
 

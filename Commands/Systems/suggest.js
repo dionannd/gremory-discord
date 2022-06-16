@@ -10,9 +10,18 @@ module.exports = {
       description: "Pilih tipenya.",
       required: true,
       choices: [
-        { name: "Command", value: "command" },
-        { name: "Event", value: "event" },
-        { name: "System", value: "system" },
+        {
+          name: "Command",
+          value: "Command",
+        },
+        {
+          name: "Event",
+          value: "Event",
+        },
+        {
+          name: "System",
+          value: "System",
+        },
       ],
     },
     {
@@ -22,7 +31,7 @@ module.exports = {
       required: true,
     },
     {
-      name: "functionality",
+      name: "function",
       description: "Jelaskan fungsi dari saran ini.",
       type: "STRING",
       required: true,
@@ -38,12 +47,12 @@ module.exports = {
 
     const type = options.getString("type");
     const name = options.getString("name");
-    const func = options.getString("functionality");
+    const func = options.getString("function");
 
     const Response = new MessageEmbed()
       .setColor("AQUA")
       .setDescription(`${interaction.member} telah menyarankan ${type}`)
-      .addField("Nama", `${name}`)
+      .addField("Nama", `${name}`, true)
       .addField("Fungsi", `${func}`, true);
 
     const message = await interaction.reply({
