@@ -4,7 +4,7 @@
   "description": "A Basic Bot for Discord `under developed`",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
