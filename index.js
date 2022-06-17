@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { Client, Collection } = require("discord.js");
 const client = new Client({ intents: 32767 });
 
@@ -16,7 +17,7 @@ client.distube = new DisTube(client, {
 
 module.exports = client;
 
-require("./Structures/Handlers/Events")(client);
-require("./Structures/Handlers/Commands")(client);
+require("./src/handlers/events")(client);
+require("./src/handlers/commands")(client);
 
 client.login(process.env.TOKEN);

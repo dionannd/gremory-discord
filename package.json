@@ -22,6 +22,7 @@
     "ascii-table": "^0.0.9",
     "discord.js": "^13.8.0",
     "distube": "^3.3.4",
+    "dotenv": "^16.0.1",
     "ffmpeg-static": "^4.4.1",
     "glob": "^8.0.3",
     "libsodium-wrappers": "^0.7.10",

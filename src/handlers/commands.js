@@ -1,10 +1,9 @@
-const { Perms } = require("../Validation/Permissions");
+const { Perms } = require("../validation/permissions");
 const { Client } = require("discord.js");
 const { promisify } = require("util");
 const { glob } = require("glob");
 const PG = promisify(glob);
 const Ascii = require("ascii-table");
-// const { serverId } = require("../config.json");
 
 /**
  *
@@ -15,7 +14,7 @@ module.exports = async (client) => {
 
   CommandsArray = [];
 
-  (await PG(`${process.cwd()}/Commands/*/*.js`)).map(async (file) => {
+  (await PG(`${process.cwd()}/commands/*/*.js`)).map(async (file) => {
     const command = require(file);
 
     if (!command.name)
@@ -47,9 +46,8 @@ module.exports = async (client) => {
   console.log(Table.toString());
 
   // PERMISSION CHECK
-
   // client.on("ready", async () => {
-  //   const MainGuild = await client.guilds.cache.get(serverId);
+  //   const MainGuild = await client.guilds.cache.get(process.env.SERVER_ID);
 
   //   MainGuild.commands.set(CommandsArray).then(async (command) => {
   //     const Roles = (commandName) => {

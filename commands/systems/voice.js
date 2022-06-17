@@ -69,7 +69,20 @@ module.exports = {
           name: "number",
           type: "NUMBER",
           require: true,
-          description: "Isi angka 0-99 | 0 = tidak terbatas.",
+          description: "Isi angka 0-99, 0 = tidak terbatas.",
+        },
+      ],
+    },
+    {
+      name: "region",
+      type: "SUB_COMMAND",
+      description: "Ubah region voice channel.",
+      options: [
+        {
+          name: "name",
+          type: "STRING",
+          required: true,
+          description: "Tuliskan nama region yang ingin di gunakan.",
         },
       ],
     },
@@ -212,6 +225,21 @@ module.exports = {
               ephemeral: true,
             });
           }
+        }
+        break;
+      case "region":
+        {
+          const newRegion = options.getString("name");
+
+          voiceChannel.setRTCRegion(newRegion);
+          interaction.reply({
+            embeds: [
+              Embed.setDescription(
+                `Region channel berubah menjadi: ${newRegion}.`
+              ),
+            ],
+            ephemeral: true,
+          });
         }
         break;
       case "public":
