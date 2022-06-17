@@ -1,6 +1,6 @@
 const { Client, MessageEmbed } = require("discord.js");
 const { connection } = require("mongoose");
-require("../../events/client/ready");
+require("../../Events/client/ready");
 
 module.exports = {
   name: "status",

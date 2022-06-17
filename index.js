@@ -17,7 +17,7 @@ client.distube = new DisTube(client, {
 
 module.exports = client;
 
-require("./src/handlers/events")(client);
-require("./src/handlers/commands")(client);
+// require("./Structures/Handlers/Events")(client);
+// require("./Structures/Handlers/Commands")(client);
 
 client.login(process.env.TOKEN);

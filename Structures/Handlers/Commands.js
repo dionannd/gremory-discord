@@ -1,4 +1,4 @@
-const { Perms } = require("../validation/permissions");
+const { Perms } = require("../Validation/permissions");
 const { Client } = require("discord.js");
 const { promisify } = require("util");
 const { glob } = require("glob");
@@ -14,7 +14,7 @@ module.exports = async (client) => {
 
   CommandsArray = [];
 
-  (await PG(`${process.cwd()}/commands/*/*.js`)).map(async (file) => {
+  (await PG(`${process.cwd()}/Commands/*/*.js`)).map(async (file) => {
     const command = require(file);
 
     if (!command.name)
