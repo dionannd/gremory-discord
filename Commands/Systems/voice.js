@@ -82,7 +82,8 @@ module.exports = {
           name: "name",
           type: "STRING",
           required: true,
-          description: "Tuliskan nama region yang ingin di gunakan.",
+          description:
+            "Tuliskan nama region, ex: brazil / us-central, auto = automatically .",
         },
       ],
     },
@@ -231,29 +232,101 @@ module.exports = {
         {
           const newRegion = options.getString("name");
 
-          if (newRegion === "null") {
+          if (newRegion > 15 || newRegion < 4)
+            return interaction.reply({
+              embeds: [
+                Embed.setDescription(
+                  `Tidak boleh kurang dari 4 atau lebih dari 15 karakter`
+                ),
+              ],
+            });
+
+          if (newRegion === "hong-kong") {
+            voiceChannel.setRTCRegion("hongkong");
+          } else if (newRegion === "singapur") {
+            voiceChannel.setRTCRegion("singapore");
+          } else if (
+            newRegion === "jepang" ||
+            newRegion === "jav" ||
+            newRegion === "wibu"
+          ) {
+            voiceChannel.setRTCRegion("japan");
+          } else if (newRegion === "uscentral") {
+            voiceChannel.setRTCRegion("us-central");
+          } else if (
+            newRegion === "useast" ||
+            newRegion === "us-timur" ||
+            newRegion === "ustimur" ||
+            newRegion === "us timur"
+          ) {
+            voiceChannel.setRTCRegion("us-east");
+          } else if (
+            newRegion === "ussouth" ||
+            newRegion === "us-selatan" ||
+            newRegion === "usselatan" ||
+            newRegion === "us selatan"
+          ) {
+            voiceChannel.setRTCRegion("us-south");
+          } else if (
+            newRegion === "uswest" ||
+            newRegion === "us-barat" ||
+            newRegion === "usbarat" ||
+            newRegion === "us barat"
+          ) {
+            voiceChannel.setRTCRegion("us-west");
+          } else if (
+            newRegion === "south-africa" ||
+            newRegion === "south afrika" ||
+            newRegion === "south africa" ||
+            newRegion === "afrika-selatan" ||
+            newRegion === "afrika selatan"
+          ) {
+            voiceChannel.setRTCRegion("southafrica");
+          } else if (
+            newRegion === "southkorea" ||
+            newRegion === "south korea" ||
+            newRegion === "korsel" ||
+            newRegion === "korea selatan" ||
+            newRegion === "korea-selatan"
+          ) {
+            voiceChannel.setRTCRegion("south-korea");
+          }
+
+          const changeRegion = voiceChannel.setRTCRegion(newRegion);
+
+          interaction.reply({
+            embeds: [
+              Embed.setDescription(
+                `Region channel berubah menjadi: ${newRegion}.`
+              ),
+            ],
+            ephemeral: true,
+          });
+
+          if (newRegion === "auto") {
             voiceChannel.setRTCRegion(null);
 
             interaction.reply({
               embeds: [
                 Embed.setDescription(
-                  `Region channel berubah menjadi: automatically.`
+                  `Region channel berubah menjadi: automatic.`
                 ),
               ],
               ephemeral: true,
             });
           }
 
-          voiceChannel.setRTCRegion(newRegion);
-
-          interaction.reply({
-            embeds: [
-              Embed.setDescription(
-                `Region channel berubah menjadi: ${voiceChannel.rtcRegion}.`
-              ),
-            ],
-            ephemeral: true,
-          });
+          if (!changeRegion) {
+            voiceChannel.setRTCRegion(null);
+            interaction.reply({
+              embeds: [
+                Embed.setDescription(
+                  `Region tidak ditemukan, berubah mendajadi: automatic.`
+                ),
+              ],
+              ephemeral: true,
+            });
+          }
         }
         break;
       case "public":
