@@ -1,2 +1,9 @@
+# Package
 node_modules
+package-lock.json
+
+# configuration
 config.json
+.env
+.env.local.
+.env.production

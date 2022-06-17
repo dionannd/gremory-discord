@@ -1,6 +1,6 @@
 const { Client, MessageEmbed } = require("discord.js");
 const { connection } = require("mongoose");
-require("../../Events/Client/ready");
+require("../../events/client/ready");
 
 module.exports = {
   name: "status",
@@ -14,9 +14,9 @@ module.exports = {
   async execute(interaction, client) {
     const Response = new MessageEmbed().setColor("BLURPLE").setDescription(
       `**Bot Status**\n
-      **Klien**: \`🟢 Online!\` \n
-      **Database**: \`${switchTo(connection.readyState)}\` \n
-      **Ping Klien**: \`${client.ws.ping}ms\` \n 
+      **Klien**: \`🟢 Online!\`
+      **Database**: \`${switchTo(connection.readyState)}\`
+      **Ping Klien**: \`${client.ws.ping}ms\`
       **Ping Message**: \` ${Date.now() - interaction.createdTimestamp}ms \` \n
       **Aktif**: <t:${parseInt(client.readyTimestamp / 1000)}:R>
     `
