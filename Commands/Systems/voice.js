@@ -192,7 +192,7 @@ module.exports = {
         break;
       case "limit":
         {
-          const newLimit = options.getInteger("number");
+          const newLimit = options.getNumber("number");
 
           if (newLimit > 99)
             return interaction.reply({
@@ -231,11 +231,25 @@ module.exports = {
         {
           const newRegion = options.getString("name");
 
+          if (newRegion === "null") {
+            voiceChannel.setRTCRegion(null);
+
+            interaction.reply({
+              embeds: [
+                Embed.setDescription(
+                  `Region channel berubah menjadi: automatically.`
+                ),
+              ],
+              ephemeral: true,
+            });
+          }
+
           voiceChannel.setRTCRegion(newRegion);
+
           interaction.reply({
             embeds: [
               Embed.setDescription(
-                `Region channel berubah menjadi: ${newRegion}.`
+                `Region channel berubah menjadi: ${voiceChannel.rtcRegion}.`
               ),
             ],
             ephemeral: true,

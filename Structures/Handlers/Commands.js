@@ -1,15 +1,11 @@
 const { Perms } = require("../Validation/permissions");
 const { Client } = require("discord.js");
-const { promisify } = require("util");
-const { glob } = require("glob");
-const PG = promisify(glob);
-const Ascii = require("ascii-table");
 
 /**
  *
  * @param {Client} client
  */
-module.exports = async (client) => {
+module.exports = async (client, PG, Ascii) => {
   const Table = new Ascii("Memuat Command");
 
   CommandsArray = [];
@@ -24,7 +20,7 @@ module.exports = async (client) => {
         "Nama tidak ditemukan"
       );
 
-    if (!command.description)
+    if (!command.context && !command.description)
       return Table.addRow(
         command.name,
         "❎ GAGAL",
@@ -47,13 +43,13 @@ module.exports = async (client) => {
 
   // PERMISSION CHECK
   // client.on("ready", async () => {
-  //   const MainGuild = await client.guilds.cache.get(process.env.SERVER_ID);
+  //   const MainGuild = client.guilds.cache.get(process.env.SERVER_ID);
 
   //   MainGuild.commands.set(CommandsArray).then(async (command) => {
   //     const Roles = (commandName) => {
   //       const cmdPerms = CommandsArray.find(
   //         (c) => c.name === commandName
-  //       ).permissions;
+  //       ).permission;
   //       if (!cmdPerms) return null;
 
   //       return MainGuild.roles.cache.filter((r) => r.permissions.has(cmdPerms));
