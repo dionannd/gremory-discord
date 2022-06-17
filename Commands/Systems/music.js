@@ -41,7 +41,7 @@ module.exports = {
           type: "STRING",
           required: true,
           choices: [
-            { name: "queu", value: "queu" },
+            { name: "queue", value: "queue" },
             { name: "skip", value: "skip" },
             { name: "pause", value: "pause" },
             { name: "resume", value: "resume" },
@@ -127,7 +127,7 @@ module.exports = {
                   new MessageEmbed()
                     .setColor("PURPLE")
                     .setDescription(
-                      `${queu.songs.map(
+                      `${queue.songs.map(
                         (song, id) =>
                           `\n**${id + 1}**. ${song.name} - \`${
                             song.formattedDuration
