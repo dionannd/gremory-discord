@@ -1,10 +1,6 @@
 const { Events } = require("../Validation/eventNames");
-const { promisify } = require("util");
-const { glob } = require("glob");
-const PG = promisify(glob);
-const Ascii = require("ascii-table");
 
-module.exports = async (client) => {
+module.exports = async (client, PG, Ascii) => {
   const Table = new Ascii("Memuat Events");
 
   (await PG(`${process.cwd()}/Events/*/*.js`)).map(async (file) => {

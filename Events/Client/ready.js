@@ -26,7 +26,7 @@ module.exports = {
       });
 
     // Bot status Activity
-    // client.user.setActivity("serah lo dah ah!!", { type: "WATCHING" });
-    client.user.setActivity("Maintenance dulu YGY!!", { type: "PLAYING" });
+    client.user.setActivity("serah lo dah ah!!", { type: "WATCHING" });
+    // client.user.setActivity("Maintenance dulu YGY!!", { type: "PLAYING" });
   },
 };
