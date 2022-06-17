@@ -2,17 +2,21 @@
 	
 	
 <!-- PROJECT SHIELDS -->
-<!-- [![Contributors][contributors-shield]][contributors-url]
+[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![GPL-3.0 License][license-shield]][license-url] -->
+[![GPL-3.0 License][license-shield]][license-url]
 
 	
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">Magerrr</h3>
+	<a href="https://github.com/dionannd/gremory-discord">
+    <img src="Assets/profile.png" alt="Logo" width="100" height="100">
+  </a>
+	
+  <h3 align="center">Gremory</h3>
 
   <p align="center">
     DISCORD BOT
@@ -56,21 +60,25 @@ A Basic Bot for create temporary voice channel in Discord!
 	
 desired project:
 * easy for setup.
-* Multiple Guilds (server)
+* Used multiple servers.
+* 24/7 online.
 	
 ### Built With
 	
 * [Node.js](https://nodejs.org)
-* [Discord.js](https://discordjs.org)
+* [Discord.js](https://discord.js.org)
+* [DisTube](https://distube.js.org)
+* [MongoDB](https://www.mongodb.com)
 
 <!-- ROADMAP -->
 ## Roadmap
 	
 - [x] Add Join to create channel
 - [x] Add commands for voice channel
-- [ ] Add Play Music in voice channel
-- [ ] Add commands for music
+- [x] Add Play Music in voice channel
+- [x] Add commands for music
 - [ ] Add Advance clear chat
+- [ ] Add custom prefix
 	
 <p align="right">(<a href="#top">back to top</a>)</p>
 	
@@ -162,14 +170,14 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 	
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/dionannd/magerrr-discord.svg?style=for-the-badge
-[contributors-url]: https://github.com/dionannd/magerrr-discord/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/dionannd/magerrr-discord.svg?style=for-the-badge
-[forks-url]: https://github.com/dionannd/magerrr-discord/network/members
-[stars-shield]: https://img.shields.io/github/stars/dionannd/magerrr-discord.svg?style=for-the-badge
-[stars-url]: https://github.com/dionannd/magerrr-discord/stargazers
-[issues-shield]: https://img.shields.io/github/issues/dionannd/magerrr-discord.svg?style=for-the-badge
-[issues-url]: https://github.com/dionannd/magerrr-discord/issues
-[license-shield]: https://img.shields.io/github/license/dionannd/magerrr-discord.svg?style=for-the-badge
-[license-url]: https://github.com/dionannd/magerrr-discord/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/dionannd/gremory-discord.svg?style=for-the-badge
+[contributors-url]: https://github.com/dionannd/gremory-discord/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/dionannd/gremory-discord.svg?style=for-the-badge
+[forks-url]: https://github.com/dionannd/gremory-discord/network/members
+[stars-shield]: https://img.shields.io/github/stars/dionannd/gremory-discord.svg?style=for-the-badge
+[stars-url]: https://github.com/dionannd/gremory-discord/stargazers
+[issues-shield]: https://img.shields.io/github/issues/dionannd/gremory-discord.svg?style=for-the-badge
+[issues-url]: https://github.com/dionannd/gremory-discord/issues
+[license-shield]: https://img.shields.io/github/license/dionannd/gremory-discord.svg?style=for-the-badge
+[license-url]: https://github.com/dionannd/gremory-discord/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
