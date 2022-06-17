@@ -1,37 +1,175 @@
-## Discord Bot
+<div id="top"><div>
+	
+	
+<!-- PROJECT SHIELDS -->
+<!-- [![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![GPL-3.0 License][license-shield]][license-url] -->
 
-A Basic Bot for Discord `under development`
+	
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <h3 align="center">Magerrr</h3>
 
-## Feature
+  <p align="center">
+    DISCORD BOT
+    <br />
+   <br />
+    <a href="https://github.com/dionannd/magerrr-discord">View Demo</a>
+    ·
+    <a href="https://github.com/dionannd/magerrr-discord/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/dionannd/magerrr-discord/issues">Request Feature</a>
+  </p>
+</div>
+	
+<!-- TABLE OF CONTENT -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#description">Description</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+		<li><a href="#roadmap">Roadmap</a></li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+ </ol>
+</details>
 
-- `/` command bot
-- `status` client and database connection
-- `Join to Create` Voice Channel Room's
-- Control Channel from `join to create` with commands
-- Music `under development`
+<!-- DESCRIPTION -->
+## Description
+A Basic Bot for create temporary voice channel in Discord!
+	
+desired project:
+* easy for setup.
+* Multiple Guilds (server)
+	
+### Built With
+	
+* [Node.js](https://nodejs.org)
+* [Discord.js](https://discordjs.org)
 
-## Installation
+<!-- ROADMAP -->
+## Roadmap
+	
+- [x] Add Join to create channel
+- [x] Add commands for voice channel
+- [ ] Add Play Music in voice channel
+- [ ] Add commands for music
+- [ ] Add Advance clear chat
+	
+<p align="right">(<a href="#top">back to top</a>)</p>
+	
 
- **1.** Install [node.js v14](https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode) or higher
+<!-- GETTING STARTED -->
+## Getting Started
 
- **2.** Download this repo and unzip it   |   or git clone it
- 
- **3.** Install all of the packages with **`npm install`**     |  the packages are   **`npm install node.js discord.js glob ascii-table mongoose`**
- 
- **4.** start the bot with **`node index.js` or `npm start`**
+For running this project locally, follow these simple steps.
+	
+### Prerequisites
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+	
+* dependencies (optional)
+	```sh
+  npm install node.js discord.js glob ascii-table mongoose dotenv
+  ```
+	
+### Installation
+_Installing and setting up this project, follow these steps._
+	
+1. Clone the repo
+	 ```sh
+   git clone https://github.com/dionannd/magerrr-discord.git
+   ```
+2. Install all of the packages
+	 ```sh
+   npm install
+   ```
+3. Setup configuration `.env` in root project. (**Note:** if the file doesn't exist, please create one)
+	 ```js
+   TOKEN=your_bot_token
+	 DATABASE_URL=your_db_url_connection
+	 SERVER_ID=your_server_id
+	 VOICECHANNEL_ID=your_voice_channel_id
+   ```
+4. start the project with **`node index.js` or `npm start`**
+	
+#### **NOTE:** _If you are having errors/problems with starting, delete the `package.json` & `package-lock.json` file and do, before you install the packages `npm init -y` and install the depedencies again_
+	
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Setup configuration
 
-```javascript
-// Structure/config.json
-{
-  "Token": "Your bot token",
-  "DatabaseUrl": "Your DB url connect", // rec: mongoDB
-  "voiceChannelId": "your discord voice channel ID",
-  "serverId": "your server ID"
-}
-```
+## Usage
 
-## **NOTE:**
+1. Start with `/voice` in text-channel for use the commands for voice channel. (you must join to create first)
+	
+	* `name`: change name `join to create` your channel.
+	* `invite`: Invite your friend to join your channel.
+	* `kick`: Kick your friend from your channel.
+	* `limit`: limix max user channel.
+	* `public`: option for public or private your channel.
+	
+2. Start with `/music` in text-channel for control music. (you must to voice channel) `under development`
+	
+	* `play`: for playing music in your channel.
+	* `volume`: control volume music currently listening.
+	* `settings`: setting the music currently listening.
+	
+<p align="right">(<a href="#top">back to top</a>)</p>
+	
+	
+<!-- CONTRIBUTING -->
+## Contributing
 
-*If you are having errors/problems with starting, delete the `package.json` & `package-lock.json` file and do, before you install the packages `npm init -y`*
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+	
+<p align="right">(<a href="#top">back to top</a>)</p>
+	
+	
+<!-- LICENSE -->
+## License
+
+Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.	
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+	
+	
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/dionannd/magerrr-discord.svg?style=for-the-badge
+[contributors-url]: https://github.com/dionannd/magerrr-discord/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/dionannd/magerrr-discord.svg?style=for-the-badge
+[forks-url]: https://github.com/dionannd/magerrr-discord/network/members
+[stars-shield]: https://img.shields.io/github/stars/dionannd/magerrr-discord.svg?style=for-the-badge
+[stars-url]: https://github.com/dionannd/magerrr-discord/stargazers
+[issues-shield]: https://img.shields.io/github/issues/dionannd/magerrr-discord.svg?style=for-the-badge
+[issues-url]: https://github.com/dionannd/magerrr-discord/issues
+[license-shield]: https://img.shields.io/github/license/dionannd/magerrr-discord.svg?style=for-the-badge
+[license-url]: https://github.com/dionannd/magerrr-discord/blob/master/LICENSE.txt
+[product-screenshot]: images/screenshot.png
