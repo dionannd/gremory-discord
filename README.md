@@ -4,7 +4,7 @@
 <!-- PROJECT SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
+[![Stars][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![GPL-3.0 License][license-shield]][license-url]
 
@@ -13,7 +13,7 @@
 <br />
 <div align="center">
 	<a href="https://github.com/dionannd/gremory-discord">
-    <img src="Assets/profile.png" alt="Logo" width="100" height="100">
+    <img src="src/assets/profile.png" alt="Logo" width="100" height="100">
   </a>
 	
   <h3 align="center">Gremory</h3>
@@ -22,11 +22,11 @@
     DISCORD BOT
     <br />
    <br />
-    <a href="https://github.com/dionannd/magerrr-discord">View Demo</a>
+    <a href="https://github.com/dionannd/gremory-discord">View Demo</a>
     ·
-    <a href="https://github.com/dionannd/magerrr-discord/issues">Report Bug</a>
+    <a href="https://github.com/dionannd/gremory-discord/issues">Report Bug</a>
     ·
-    <a href="https://github.com/dionannd/magerrr-discord/issues">Request Feature</a>
+    <a href="https://github.com/dionannd/gremory-discord/issues">Request Feature</a>
   </p>
 </div>
 	
@@ -104,7 +104,7 @@ _Installing and setting up this project, follow these steps._
 	
 1. Clone the repo
 	 ```sh
-   git clone https://github.com/dionannd/magerrr-discord.git
+   git clone https://github.com/dionannd/gremory-discord.git
    ```
 2. Install all of the packages
 	 ```sh
