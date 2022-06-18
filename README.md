@@ -179,5 +179,5 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 [issues-shield]: https://img.shields.io/github/issues/dionannd/gremory-discord.svg?style=for-the-badge
 [issues-url]: https://github.com/dionannd/gremory-discord/issues
 [license-shield]: https://img.shields.io/github/license/dionannd/gremory-discord.svg?style=for-the-badge
-[license-url]: https://github.com/dionannd/gremory-discord/blob/master/LICENSE.txt
+[license-url]: https://github.com/dionannd/gremory-discord/blob/main/LICENSE
 [product-screenshot]: images/screenshot.png
