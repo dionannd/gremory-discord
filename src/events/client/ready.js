@@ -1,4 +1,5 @@
 const { Client } = require("discord.js");
+const { PREFIX } = require("../../data/config.json");
 const mongoose = require("mongoose");
 
 module.exports = {
@@ -26,7 +27,9 @@ module.exports = {
       });
 
     // Bot status Activity
-    client.user.setActivity("serah lo dah ah!!", { type: "WATCHING" });
+    client.user.setActivity(`${PREFIX}help for list commands`, {
+      type: "LISTENING",
+    });
     // client.user.setActivity("Maintenance dulu YGY!!", { type: "PLAYING" });
   },
 };

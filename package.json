@@ -2,9 +2,10 @@
   "name": "discord-bot",
   "version": "1.0.0",
   "description": "A Basic Bot for Discord `under developed`",
-  "main": "./Structures/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "test": "nodemon ."
   },
   "repository": {
     "type": "git",
@@ -24,11 +25,12 @@
     "discord.js": "^13.8.0",
     "distube": "^3.3.4",
     "dotenv": "^16.0.1",
+    "eslint": "^8.18.0",
     "ffmpeg-static": "^4.4.1",
     "glob": "^8.0.3",
     "libsodium-wrappers": "^0.7.10",
     "mongoose": "^6.3.8",
-    "node.js": "^0.0.1-security",
+    "nodemon": "^2.0.16",
     "yt-search": "^2.10.3",
     "ytdl-core": "^4.11.0"
   }
