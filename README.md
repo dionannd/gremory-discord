@@ -73,8 +73,6 @@ desired project:
 <!-- ROADMAP -->
 ## Roadmap
 	
-- [x] Add Join to create channel
-- [x] Add commands for voice channel
 - [x] Add Play Music in voice channel
 - [x] Add commands for music
 - [ ] Add Advance clear chat
