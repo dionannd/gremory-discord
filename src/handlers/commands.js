@@ -1,4 +1,4 @@
-const { Perms } = require("../Validation/permissions");
+const { Perms } = require("../validations/permissions");
 const { Client } = require("discord.js");
 
 /**
@@ -10,33 +10,24 @@ module.exports = async (client, PG, Ascii) => {
 
   CommandsArray = [];
 
-  (await PG(`${process.cwd()}/Commands/*/*.js`)).map(async (file) => {
+  (await PG(`${process.cwd()}/src/commands/*/*.js`)).map(async (file) => {
     const command = require(file);
 
     if (!command.name)
-      return Table.addRow(
-        file.split("/")[7],
-        "❎ GAGAL",
-        "Nama tidak ditemukan"
-      );
+      return Table.addRow(file.split("/")[7], "❎", "Nama tidak ditemukan");
 
     if (!command.context && !command.description)
-      return Table.addRow(
-        command.name,
-        "❎ GAGAL",
-        "Deskripsi tidak ditemukan"
-      );
+      return Table.addRow(command.name, "❎", "Deskripsi tidak ditemukan");
 
     if (command.permission) {
       if (Perms.includes(command.permission)) command.defaultPermission = false;
-      else
-        return Table.addRow(command.name, "❎ GAGAL", "Perizinan tidak valid");
+      else return Table.addRow(command.name, "❎", "Perizinan tidak valid");
     }
 
     client.commands.set(command.name, command);
     CommandsArray.push(command);
 
-    await Table.addRow(command.name, "✅ BERHASIL");
+    await Table.addRow(command.name, "✅");
   });
 
   console.log(Table.toString());

@@ -22,8 +22,8 @@ client.distube = new DisTube(client, {
 
 module.exports = client;
 
-["Events", "Commands"].forEach((handler) => {
-  require(`./Handlers/${handler}`)(client, PG, Ascii);
+["events", "commands"].forEach((handler) => {
+  require(`./src/handlers/${handler}`)(client, PG, Ascii);
 });
 
 client.login(process.env.TOKEN);
