@@ -47,7 +47,7 @@ module.exports = {
             { name: "⏯️ Lanjutkan Lagu", value: "resume" },
             { name: "⏹️ Stop Musik", value: "stop" },
             { name: "🔀 Acak Antrian", value: "shuffle" },
-            { name: "🔃 Mmode Putar Otomatis", value: "autoPlay" },
+            { name: "🔃 Mode Putar Otomatis", value: "autoPlay" },
             { name: "🆕 Tambahkan Lagu Terkait", value: "relatedSong" },
             { name: "🔃 Mode Pengulangan", value: "repeatMode" },
           ],
@@ -89,7 +89,7 @@ module.exports = {
             member: member,
           });
           return interaction.reply({
-            content: "🗒️Permintaan diterima, sedang mencari lagu.",
+            content: "🗒️ Permintaan diterima, sedang mencari lagu.",
           });
         }
         case "volume": {
