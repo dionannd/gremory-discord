@@ -34,16 +34,16 @@ module.exports = async (client, PG, Ascii) => {
 
   // PERMISSION CHECK
   // client.on("ready", async () => {
-  //   const MainGuild = client.guilds.cache.get(process.env.SERVER_ID);
+  //   const Guild = await client.guilds.cache.get(process.env.SERVER_ID);
 
-  //   MainGuild.commands.set(CommandsArray).then(async (command) => {
+  //   Guild.commands.set(CommandsArray).then(async (command) => {
   //     const Roles = (commandName) => {
   //       const cmdPerms = CommandsArray.find(
   //         (c) => c.name === commandName
   //       ).permission;
   //       if (!cmdPerms) return null;
 
-  //       return MainGuild.roles.cache.filter((r) => r.permissions.has(cmdPerms));
+  //       return Guild.roles.cache.filter((r) => r.permissions.has(cmdPerms));
   //     };
 
   //     const fullPermissions = command.reduce((accumulator, r) => {
@@ -57,7 +57,7 @@ module.exports = async (client, PG, Ascii) => {
   //       return [...accumulator, { id: r.id, permissions }];
   //     }, []);
 
-  //     await MainGuild.commands.permissions.set({ fullPermissions });
+  //     await Guild.commands.permissions.set({ fullPermissions });
   //   });
   // });
 };

@@ -34,11 +34,15 @@ module.exports = {
 
     const Response = new MessageEmbed().setColor("LUMINOUS_VIVID_PINK");
 
-    if (target) {
+    if (Target) {
       let i = 0;
-      const filtered = [](await Messages).filter((m) => {
-        filtered.push(m);
-        i++;
+      const filtered = [];
+
+      (await Messages).filter((m) => {
+        if (m.author.id === Target.id && Amount > i) {
+          filtered.push(m);
+          i++;
+        }
       });
 
       await channel.bulkDelete(filtered, true).then((messages) => {
@@ -48,7 +52,7 @@ module.exports = {
         interaction.reply({ embeds: [Response] });
       });
     } else {
-      await channel.bulkDelete(Amount, true).then((message) => {
+      await channel.bulkDelete(Amount, true).then((messages) => {
         Response.setDescription(
           `🧹 Membersihkan ${messages.size} pesan dari channel ini.`
         );

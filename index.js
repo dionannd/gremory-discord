@@ -9,6 +9,7 @@ const PG = promisify(glob);
 
 const client = new Client({ intents: 32767 });
 
+client.aliases = new Collection();
 client.commands = new Collection();
 client.voiceGenerator = new Collection();
 
