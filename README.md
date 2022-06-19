@@ -124,19 +124,7 @@ _Installing and setting up this project, follow these steps._
 
 ## Usage
 
-1. Start with `/voice` in text-channel for use the commands for voice channel. (you must join to create first)
-	
-	* `name`: change name `join to create` your channel.
-	* `invite`: Invite your friend to join your channel.
-	* `kick`: Kick your friend from your channel.
-	* `limit`: limix max user channel.
-	* `public`: option for public or private your channel.
-	
-2. Start with `/music` in text-channel for control music. (you must to voice channel) `under development`
-	
-	* `play`: for playing music in your channel.
-	* `volume`: control volume music currently listening.
-	* `settings`: setting the music currently listening.
+For usage this bot, please refer to the [Documentation](https://github.com/dionannd/gremory-discord/wiki) for see all commands
 	
 <p align="right">(<a href="#top">back to top</a>)</p>
 	
