@@ -28,8 +28,8 @@ module.exports = {
       });
 
     // Bot status Activity
-    client.user.setActivity(`${PREFIX}help for list commands`, {
-      type: "LISTENING",
+    client.user.setActivity(`Your Heart❤️`, {
+      type: "PLAYING",
     });
     // client.user.setActivity("Maintenance dulu YGY!!", { type: "PLAYING" });
   },
