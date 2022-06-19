@@ -41,11 +41,15 @@ module.exports = {
           type: "STRING",
           required: true,
           choices: [
-            { name: "queue", value: "queue" },
-            { name: "skip", value: "skip" },
-            { name: "pause", value: "pause" },
-            { name: "resume", value: "resume" },
-            { name: "stop", value: "stop" },
+            { name: "🔢 Lihat Antrian", value: "queue" },
+            { name: "⏭️ Skip Lagu", value: "skip" },
+            { name: "⏸️ Jeda Lagu", value: "pause" },
+            { name: "⏯️ Lanjutkan Lagu", value: "resume" },
+            { name: "⏹️ Stop Musik", value: "stop" },
+            { name: "🔀 Acak Antrian", value: "shuffle" },
+            { name: "🔃 Mmode Putar Otomatis", value: "autoPlay" },
+            { name: "🆕 Tambahkan Lagu Terkait", value: "relatedSong" },
+            { name: "🔃 Mode Pengulangan", value: "repeatMode" },
           ],
         },
       ],
@@ -73,7 +77,7 @@ module.exports = {
       VoiceChannel.id !== guild.me.voice.channelId
     )
       return interaction.reply({
-        content: `Aku sudah memutar musik di <#${guild.me.voice.channelId}>.`,
+        content: `Aku sedang memutar musik di channel <#${guild.me.voice.channelId}>.`,
         ephemeral: true,
       });
 
@@ -84,7 +88,9 @@ module.exports = {
             textChannel: channel,
             member: member,
           });
-          return interaction.reply({ content: "Permintaan diterima." });
+          return interaction.reply({
+            content: "🗒️Permintaan diterima, sedang mencari lagu.",
+          });
         }
         case "volume": {
           const Volume = options.getNumber("percent");
@@ -95,7 +101,7 @@ module.exports = {
 
           client.distube.setVolume(VoiceChannel, Volume);
           return interaction.reply({
-            content: `Volume sudah diatur menjadi \`${Volume}%\``,
+            content: `📶 Volume sudah diatur menjadi \`${Volume}%\``,
           });
         }
         case "settings": {
@@ -108,19 +114,54 @@ module.exports = {
             case "skip":
               await queue.skip(VoiceChannel);
               return interaction.reply({ content: "⏭️ Lagu sudah diskip." });
+
             case "stop":
               await queue.stop(VoiceChannel);
               return interaction.reply({
-                content: "⏹️ Musik sudah berhenti.",
+                content: "⏹️ Musik sudah dihentikan.",
               });
+
             case "pause":
               await queue.pause(VoiceChannel);
               return interaction.reply({ content: "⏸️ Lagu sudah dijeda." });
+
             case "resume":
               await queue.resume(VoiceChannel);
               return interaction.reply({
                 content: "⏸️ Lagu sudah dilanjutkan.",
               });
+
+            case "shuffle":
+              await queue.shuffle(VoiceChannel);
+              return interaction.reply({
+                content: "🔀 Antrian sudah diacak.",
+              });
+
+            case "autoPlay":
+              let Mode = await queue.toggleAutoplay(VoiceChannel);
+              return interaction.reply({
+                content: `🔃 Mode otomatis sudah diatur ke: ${
+                  Mode ? "On" : "Off"
+                }.`,
+              });
+
+            case "relatedSong":
+              await queue.addRelatedSong(VoiceChannel);
+              return interaction.reply({
+                content: "🆕 lagu terkait telah ditambahkan ke antrian.",
+              });
+
+            case "repeatMode":
+              let ModeRepeat = await client.distube.setRepeatMode(queue);
+              return interaction.reply({
+                content: `🔃 Mode ulangi sudah diatur ke: ${(ModeRepeat =
+                  ModeRepeat
+                    ? ModeRepeat == 2
+                      ? "Antrian"
+                      : "Lagu"
+                    : "Off")}.`,
+              });
+
             case "queue":
               return interaction.reply({
                 embeds: [

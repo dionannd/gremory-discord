@@ -79,11 +79,27 @@ module.exports = {
       description: "Ubah region voice channel.",
       options: [
         {
-          name: "name",
+          name: "country",
           type: "STRING",
           required: true,
-          description:
-            "Tuliskan nama region, ex: brazil / us-central, auto = automatically .",
+          description: "Pilih region yang tersedia.",
+          choices: [
+            { name: "Automatic", value: "null" },
+            { name: "🇧🇷 Brazil", value: "brazil" },
+            { name: "🇭🇰 Hong Kong", value: "hongkong" },
+            { name: "🇮🇳 India", value: "india" },
+            { name: "🇯🇵 Japan", value: "japan" },
+            { name: "🇳🇱 Rotterdam", value: "rotterdam" },
+            { name: "🇷🇺 Russia", value: "russia" },
+            { name: "🇸🇬 Singapore", value: "singapore" },
+            { name: "🇰🇷 South Korea", value: "south-korea" },
+            { name: "🇿🇦 South Afrika", value: "southafrica" },
+            { name: "🇦🇺 Sydney", value: "sydney" },
+            { name: "🇺🇳 US Central", value: "us-central" },
+            { name: "🇺🇳 US East", value: "us-east" },
+            { name: "🇺🇳 US South", value: "us-south" },
+            { name: "🇺🇳 US West", value: "us-west" },
+          ],
         },
       ],
     },
@@ -230,41 +246,203 @@ module.exports = {
         break;
       case "region":
         {
-          try {
-            const newRegion = options.getString("name");
-
-            if (newRegion > 15 || newRegion < 4)
-              return interaction.reply({
-                embeds: [
-                  Embed.setDescription(
-                    `Tidak boleh kurang dari 4 atau lebih dari 15 karakter`
-                  ),
-                ],
-              });
-
-            voiceChannel.setRTCRegion(newRegion);
-
-            interaction.reply({
-              embeds: [
-                Embed.setDescription(
-                  `Region channel berubah menjadi: ${voiceChannel.rtc_region}.`
-                ),
-              ],
-              ephemeral: true,
-            });
-          } catch (error) {
-            const auto = voiceChannel.setRTCRegion(null);
-            await interaction.reply({
-              embeds: [
-                Embed.setDescription(
-                  `Region tidak ditemukan, berubah menjadi: automatic.`,
-                  error
-                ).setColor("RED"),
-              ],
-              ephemeral: true,
-            });
-
-            return auto;
+          const changeCountry = options.getString("country");
+          switch (changeCountry) {
+            case "null":
+              {
+                voiceChannel.setRTCRegion(null);
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: Automatic."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "brazil":
+              {
+                voiceChannel.setRTCRegion("brazil");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇧🇷 Brazil."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "hongkong":
+              {
+                voiceChannel.setRTCRegion("hongkong");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇭🇰 Hong Kong."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "india":
+              {
+                voiceChannel.setRTCRegion("india");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇮🇳 India."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "japan":
+              {
+                voiceChannel.setRTCRegion("japan");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇯🇵 Japan."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "rotterdam":
+              {
+                voiceChannel.setRTCRegion("rotterdam");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇳🇱 Rotterdam."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "russia":
+              {
+                voiceChannel.setRTCRegion("russia");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇷🇺 Russia."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "singapore":
+              {
+                voiceChannel.setRTCRegion("singapore");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇸🇬 Singapore."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "south-korea":
+              {
+                voiceChannel.setRTCRegion("south-korea");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇰🇷 South Korea."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "southafrica":
+              {
+                voiceChannel.setRTCRegion("southafrica");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇿🇦 South Afrika."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "sydney":
+              {
+                voiceChannel.setRTCRegion("sydney");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇦🇺 Sydney."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "us-central":
+              {
+                voiceChannel.setRTCRegion("us-central");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇺🇳 US Central."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "us-east":
+              {
+                voiceChannel.setRTCRegion("us-east");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇺🇳 US East."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "us-south":
+              {
+                voiceChannel.setRTCRegion("us-south");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇺🇳 US South."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
+            case "us-west":
+              {
+                voiceChannel.setRTCRegion("us-west");
+                interaction.reply({
+                  embeds: [
+                    Embed.setDescription(
+                      "Region channel sudah diatur menjadi: 🇺🇳 US West."
+                    ),
+                  ],
+                  ephemeral: true,
+                });
+              }
+              break;
           }
         }
         break;
@@ -279,7 +457,9 @@ module.exports = {
                 });
                 interaction.reply({
                   embeds: [
-                    Embed.setDescription("Channel berubah menjadi Public."),
+                    Embed.setDescription(
+                      "🔓 Channel terbuka untuk semua orang ."
+                    ),
                   ],
                   ephemeral: true,
                 });
@@ -292,7 +472,9 @@ module.exports = {
                 });
                 interaction.reply({
                   embeds: [
-                    Embed.setDescription("Channel berubah menjadi Private."),
+                    Embed.setDescription(
+                      "🔒 Channel sudah ditutup untuk beberapa orang."
+                    ),
                   ],
                   ephemeral: true,
                 });

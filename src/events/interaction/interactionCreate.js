@@ -20,7 +20,6 @@ module.exports = {
                 .setDescription("⛔ Bermasalah saat menjalankan command ini.")
                 .setColor("RED"),
             ],
-            ephemeral: true,
           }) && client.commands.delete(interaction.commandName)
         );
 

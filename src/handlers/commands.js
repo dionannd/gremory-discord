@@ -14,14 +14,14 @@ module.exports = async (client, PG, Ascii) => {
     const command = require(file);
 
     if (!command.name)
-      return Table.addRow(file.split("/")[7], "❎", "Nama tidak ditemukan");
+      return Table.addRow(file.split("/")[7], "❎", "Name tidak ditemukan");
 
     if (!command.context && !command.description)
-      return Table.addRow(command.name, "❎", "Deskripsi tidak ditemukan");
+      return Table.addRow(command.name, "❎", "Description tidak ditemukan");
 
     if (command.permission) {
       if (Perms.includes(command.permission)) command.defaultPermission = false;
-      else return Table.addRow(command.name, "❎", "Perizinan tidak valid");
+      else return Table.addRow(command.name, "❎", "Permission tidak valid");
     }
 
     client.commands.set(command.name, command);
@@ -33,8 +33,9 @@ module.exports = async (client, PG, Ascii) => {
   console.log(Table.toString());
 
   // PERMISSION CHECK
+
   // client.on("ready", async () => {
-  //   const Guild = await client.guilds.cache.get(process.env.SERVER_ID);
+  //   const Guild = await client.guilds.cache.get("941519741456093194");
 
   //   Guild.commands.set(CommandsArray).then(async (command) => {
   //     const Roles = (commandName) => {
