@@ -11,6 +11,7 @@ module.exports = {
    * @param {Client} client
    */
   execute(client) {
+    console.log("Klien login sebagai " + client.user.tag);
     console.log("Klien sudah siap dijalankan!");
 
     if (!process.env.DATABASE_URL) return;
