@@ -49,14 +49,14 @@ module.exports = {
         Response.setDescription(
           `🧹 Membersihkan ${messages.size} pesan dari ${Target}.`
         );
-        interaction.reply({ embeds: [Response] });
+        interaction.reply({ embeds: [Response], ephemeral: true });
       });
     } else {
       await channel.bulkDelete(Amount, true).then((messages) => {
         Response.setDescription(
           `🧹 Membersihkan ${messages.size} pesan dari channel ini.`
         );
-        interaction.reply({ embeds: [Response] });
+        interaction.reply({ embeds: [Response], ephemeral: true });
       });
     }
   },

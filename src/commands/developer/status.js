@@ -5,6 +5,8 @@ require("../../events/client/ready");
 module.exports = {
   name: "status",
   description: "Menampilkan status koneksi client dan database.",
+  permission: "ADMINISTRATOR",
+  aliases: ["st"],
 
   /**
    *
