@@ -84,7 +84,7 @@ module.exports = {
           required: true,
           description: "Pilih region yang tersedia.",
           choices: [
-            { name: "Automatic", value: "null" },
+            { name: "Automatic", value: "auto" },
             { name: "🇧🇷 Brazil", value: "brazil" },
             { name: "🇭🇰 Hong Kong", value: "hongkong" },
             { name: "🇮🇳 India", value: "india" },
@@ -248,9 +248,9 @@ module.exports = {
         {
           const changeCountry = options.getString("country");
           switch (changeCountry) {
-            case "null":
+            case "auto":
               {
-                voiceChannel.setRTCRegion(null);
+                voiceChannel.setRTCRegion("");
                 interaction.reply({
                   embeds: [
                     Embed.setDescription(
