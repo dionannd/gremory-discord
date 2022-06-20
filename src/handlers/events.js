@@ -10,8 +10,8 @@ module.exports = async (client, PG, Ascii) => {
       const L = file.split("/");
 
       Table.addRow(
-        `${event.name || "❎"}`,
-        `Nama event tidak ditemukan: ${L[7] + `/` + L[8]}`
+        `${event.name || "❎ error"}`,
+        `Nama event tidak valid: ${L[L.length - 2]}/${L[L.length - 1]}`
       );
       return;
     }
