@@ -32,33 +32,9 @@ module.exports = async (client, PG, Ascii) => {
 
   console.log(Table.toString());
 
-  // PERMISSION CHECK
+  client.on("ready", async () => {
+    const mainGuild = client.guilds.cache.get(process.env.SERVER_ID);
 
-  // client.on("ready", async () => {
-  //   const Guild = await client.guilds.cache.get("941519741456093194");
-
-  //   Guild.commands.set(CommandsArray).then(async (command) => {
-  //     const Roles = (commandName) => {
-  //       const cmdPerms = CommandsArray.find(
-  //         (c) => c.name === commandName
-  //       ).permission;
-  //       if (!cmdPerms) return null;
-
-  //       return Guild.roles.cache.filter((r) => r.permissions.has(cmdPerms));
-  //     };
-
-  //     const fullPermissions = command.reduce((accumulator, r) => {
-  //       const roles = Roles(r.name);
-  //       if (!roles) return accumulator;
-
-  //       const permissions = roles.reduce((a, r) => {
-  //         return [...a, { id: r.id, type: "ROLE", permission: true }];
-  //       }, []);
-
-  //       return [...accumulator, { id: r.id, permissions }];
-  //     }, []);
-
-  //     await Guild.commands.permissions.set({ fullPermissions });
-  //   });
-  // });
+    mainGuild.commands.set(CommandsArray);
+  });
 };
