@@ -3,7 +3,7 @@ const { CommandInteraction, MessageEmbed } = require("discord.js");
 module.exports = {
   name: "clear",
   description: "Menghapus sejumlah pesan tertentu dari channel atau target.",
-  permissions: "MANAGE_MESSAGES",
+  permission: "ADMINISTRATOR",
   options: [
     {
       name: "amount",
