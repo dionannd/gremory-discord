@@ -23,6 +23,8 @@ module.exports = {
           }) && client.commands.delete(interaction.commandName)
         );
 
+      command.execute(interaction, client);
+
       if (
         command.permission &&
         !interaction.member.permissions.has(command.permission)
@@ -38,8 +40,6 @@ module.exports = {
             }, 3000)
           );
       }
-
-      command.execute(interaction, client);
     }
   },
 };
