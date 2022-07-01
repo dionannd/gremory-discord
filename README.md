@@ -75,7 +75,7 @@ desired project:
 	
 - [x] Add Play Music in voice channel
 - [x] Add commands for music
-- [ ] Add Advance clear chat
+- [x] Add Advance clear chat
 - [ ] Add custom prefix
 	
 <p align="right">(<a href="#top">back to top</a>)</p>
