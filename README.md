@@ -54,7 +54,6 @@
  </ol>
 </details>
 
-<!-- DESCRIPTION -->
 ## Description
 A Basic Bot for create temporary voice channel in Discord!
 	
